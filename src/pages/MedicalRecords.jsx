@@ -14,6 +14,7 @@ const MedicalRecords = ({ user, onLogout }) => {
     'Metformin 500mg - Twice daily',
     'Vitamin D 1000IU - Once daily'
   ]);
+    
 
   const [medicalHistory, setMedicalHistory] = useState([
     {
