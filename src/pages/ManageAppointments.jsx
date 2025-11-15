@@ -20,6 +20,7 @@ const ManageAppointments = ({ user, onLogout }) => {
       specialty: 'Cardiology',
       status: 'Pending'
     },
+
     {
       id: 3,
       date: 'Apr 5, 2024 - 3:30 PM',
@@ -31,16 +32,17 @@ const ManageAppointments = ({ user, onLogout }) => {
 
   const getStatusClass = (status) => {
     switch (status.toLowerCase()) {
-      case 'confirmed':
-        return 'badge-success';
-      case 'pending':
-        return 'badge-warning';
-      case 'scheduled':
-        return 'badge-info';
+      case 'Confirmed':
+        return 'badge-Success';
+      case 'Pending':
+        return 'badge-Warning';
+      case 'Scheduled':
+        return 'badge-Info';
       default:
         return '';
     }
   };
+    
 
   const handleReschedule = (appointmentId) => {
     alert(`Reschedule appointment ${appointmentId}`);
@@ -49,7 +51,7 @@ const ManageAppointments = ({ user, onLogout }) => {
   const handleCancel = (appointmentId) => {
     if (window.confirm('Are you sure you want to cancel this appointment?')) {
       setAppointments(prev => prev.filter(apt => apt.id !== appointmentId));
-      alert('Appointment cancelled successfully');
+      alert('Appointment Cancelled Successfully');
     }
   };
 
